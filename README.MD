@@ -37,6 +37,26 @@ The model is trained for 5000 steps, for a total of `32 x 512 x 5000=82M` tokens
 According to Chinchilla scaling laws (Training Compute-Optimal Large Language Models), for a compute-optimal training, the ratio of tokens to model parameters is approximately **20:1**. As a result our model, which has **13M** parameters and which should be trained using `13M x 20 = 260M` tokens, is clearly in under-trained regime. 
 
 
+## Instructions
+
+Train the tokenizer:
+
+```bash
+python news/train_tokenizer.py
+```
+
+Prepare training/validation data splits.
+
+```bash
+python news/prepare.py
+```
+
+Train the model. Edit `config/news_model.yml` and `config/news_trainer.yml` configuration files to customize the model or training.
+
+```bash
+python train_haber_gpt.py
+```
+
 ## Experimental Generations
 
 This is not a research study, thus it is evaluated very lightly.
