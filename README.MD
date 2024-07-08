@@ -1,8 +1,8 @@
 # HaberGPT
 
-HaberGPT is a simple framework influenced greatly by the works of Andrej Karpathy, namely mingpt and nanogpt.
+HaberGPT is a simple framework influenced greatly by the works of Andrej Karpathy, namely mingpt and nanogpt. Please note that it is not a copy of the mentioned works, it is rather my implementation for my use case. 
 
-HaberGPT is built to train a tiny GPT2 language model using economy news in Turkish language. It shows that it is possible to train a 10M language model that can generate coherent Turkish text using limited scale e.g. hardware and training tokens.
+HaberGPT is built to train a tiny GPT2 language model using economy news in Turkish language. It shows that it is possible to train a 10M language model to generate coherent Turkish text using a limited compute e.g. hardware and training tokens.
 
 HaberGPT is not a research project. It is a proof of concept and a reproduction study. 
 
