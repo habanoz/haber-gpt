@@ -57,10 +57,41 @@ Train the model. Edit `config/news_model.yml` and `config/news_trainer.yml` conf
 python train_haber_gpt.py
 ```
 
+Edit the prompt in the `generate.py` and produce completions using following command.
+```bash
+python generate.py
+```
+
 ## Experimental Generations
 
 This is not a research study, thus it is evaluated very lightly.
 
+**Prompt:** `# Borsa güne yükselişle başladı`
+```
+# Borsa güne yükselişle başladı ## Özet Borsa İstanbul'da BIST 100 endeksi, güne yüzde 0,53 artışla 3.507,09 puandan başladı. ## İçerik Açılışta BIST 100 endeksi, önceki kapanışa göre 9,16 puan ve yüzde 0,53 değer kazanarak 4.507,09 puana çıktı. 
+Bankacılık endeksi yüzde 0,34 ve holding endeksi yüzde 0,66 artış kaydetti. Sektör endeksleri arasında en fazla kazandıran yüzde 4,96'yla iletişim, en çok kaybettiren yüzde 0,23'le menkul kıymet yatırım ortaklığı oldu. 
+BIST 100 endeksi dün günü yüzde 0,63 artışla 4.528,46 puandan tamamlayarak tüm zamanların en yüksek günlük ve haftalık kapanışını gerçekleştirirken, gördüğü en yüksek seviye rekorunu 4.568,98 puana taşıdı. 
+Analistler, küresel pay piyasalarında, ABD Merkez Bankası'nın (Fed) perşembe günkü para politikası kararları öncesinde bankacılık sektörüne ilişkin endişelerin risk iştahını azaltantıcı etki incelemesi ve ABD'de açıklanan Üretici Fiyat Endeksi (ÜFE) verilerinin öngörülerin üzerinde artmasına karşın ülkedeki ekonomik görünüme ilişkin endişelerin günden güne yavaş azaldığını ifade ederek, bugün ülkede açıklanacak enflasyon verilerinin yatırımcıların odağında bulunacağını bildirdi. 
+Öte yandan, dün Koç Holding, Yapı ve Kredi Bankası'nın Koç Holding, Garanti Bankası'nın düzenlediği 43 milyon lirayla Gözdemirkcell ve Garanti Bankası'na 24,2 milyon lira nominal değerli hisse senedi piyasalarından yüzde 54'ü aştığını bildirdi. 
+Bugün yurt içinde arzını beklentilerin üzerinde karlılıkları ile makroekonomik veri takvimi de yatırımcıların odağında yer alacağını aktaran analistler, teknik açıdan BIST 100 endeksinde 4.50 ve 4.750 seviyelerinin direnç, 4.60 ve 4.600 puanın destek konumunda olduğunu kaydetti.
+```
+
+Generated text is coherent and reflects the structure present in the training data. However, new lines are not generated. Generation is highly senstive to prompt similarity to the training data.
+
+
+**Prompt:** `# Borsa güne yükselişle başladı ## Özet Sporda düşüş sürdü.`
+```
+# Borsa güne yükselişle başladı ## Özet Sporda düşüş sürdü. ## İçerik İSTANBUL **Borsa İstanbul'da **BIST 100 endeksi**, güne yüzde 0,43 artışla 1.200,47 puandan başladı. 
+Açılışta **BIST 100 endeksi**, 33,70 puan ve yüzde 0,43 artışla 1.200,47 puana çıktı. Bankacılık endeksi yüzde 0,56 değer kazanırken, holding endeksi ise yüzde 0,66 değer kaybetti. 
+Sektör endeksleri arasında en fazla kazandıran yüzde 2,62 ile turizm, en çok gerileyen ise yüzde 1,70 ile menkul kıymet yatırım ortaklığı oldu. 
+Dün analistlerin direnç olarak nitelendirdikleri 1.388,85 puana kadar gerileyen BIST 100 endeksi, günü önceki kapanışa göre yüzde 0,57 yükselişle 1.19,06 puandan tamamladı. 
+Analistler, bugün yurt içinde veri akışının sakin olduğunu, yurt dışında ise Avro Bölgesi güven endeksi ve ABD'de hizmet sektörü Satın Alma Yöneticileri Endeksi (PMI) verileri ile ABD Merkez Bankası (Fed) Başkanı Janet Yellen'ın konuşmasının takip edileceğini belirtti. 
+ABD ve Avrupa'da açıklanacak imalat sanayi Satın Alma Yöneticileri Endeksi (PMI) verisinin de piyasaların yönü üzerinde etkili olduğunu kaydeden analistler, BIST 100 endeksinde 1.200 puan seviyesinin önemli destek konumuna geldiğini bildirdi.
+```
+
+This prompt includes a summary section that mentions sports stocks falling. However, generated text does not include this detail. This sample shows that text completion does not correctly account for prompt variations. 
+
+Short comings should be resolved by introducing more compute e.g. parameters and training tokens.
 
 ## References
 
