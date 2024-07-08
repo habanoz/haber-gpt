@@ -1,0 +1,6 @@
+seq_length: 512
+vocab_size: 8192
+n_embed: 384
+n_head: 6
+n_layer: 6
+dropout: 0.2

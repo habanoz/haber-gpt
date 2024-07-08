@@ -1,0 +1,24 @@
+seq_length: 512
+batch_size: 32
+data_dir: news
+warmup_iters: 100
+learning_rate:  0.001
+lr_decay_iters: 5000
+max_iters: 5000
+min_lr: 0.0001
+weight_decay: 0.1
+beta1:  0.9
+beta2: 0.99
+compile: False
+decay_lr: True
+grad_norm_clip:  1.0
+seed: 145
+# output
+out_dir: news-out
+# logging 
+log_interval: 10
+eval_interval: 250
+eval_iters: 200
+wandb_log: True
+wandb_project: GPT Training
+wandb_run_name: train-nano-1-bf16fix-lr-3
