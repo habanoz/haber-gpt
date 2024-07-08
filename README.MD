@@ -45,7 +45,11 @@ This is not a research study, thus it is evaluated very lightly.
 ## References
 
 1- [Training Compute-Optimal Large Language Models](https://arxiv.org/pdf/2203.15556)
+
 2- [TinyStories: How Small Can Language Models Be and Still SpeakCoherent English?](https://arxiv.org/pdf/2305.07759)
+
 3- [NanoGPT](https://github.com/karpathy/nanoGPT)
+
 4- [eco-news-tr dataset](https://huggingface.co/datasets/habanoz/eco-news-tr)
+
 5- [Training Code(This repository)](https://github.com/habanoz/haber-gpt)
