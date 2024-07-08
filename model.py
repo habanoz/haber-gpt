@@ -7,12 +7,11 @@ import math
 @dataclass
 class GPTConfig:
     seq_length: int =  1024
-    vocab_size: int = 50304 # GPT-2 vocab_size of 50257, padded up to nearest multiple of 64 for efficiency
+    vocab_size: int = 8192
     n_embed: int = 384
     n_head: int = 6
     n_layer: int = 6
     dropout: float = 0.1
-    bias: bool = False # to be removed
 
 class MLP(nn.Module):
     def __init__(self, config) -> None:
@@ -124,7 +123,6 @@ class GPT(nn.Module):
         for pn, p in self.named_parameters():
             if pn.endswith('c_proj.weight'):
                 torch.nn.init.normal_(p, mean=0.0, std=0.02/math.sqrt(2 * config.n_layer))
-
 
         # report number of parameters
         print("number of parameters: %.2fM" % (self.get_num_params()/1e6,))
