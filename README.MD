@@ -36,6 +36,9 @@ The model is trained for 5000 steps, for a total of `32 x 512 x 5000=82M` tokens
 
 According to Chinchilla scaling laws (Training Compute-Optimal Large Language Models), for a compute-optimal training, the ratio of tokens to model parameters is approximately **20:1**. As a result our model, which has **13M** parameters and which should be trained using `13M x 20 = 260M` tokens, is clearly in under-trained regime. 
 
+You can see WANDB training logs:
+https://wandb.ai/huseyinabanozis/GPT%20Training?nw=nwuserhuseyinabanozis
+
 
 ## Instructions
 
